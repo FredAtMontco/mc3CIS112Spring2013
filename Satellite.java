@@ -146,40 +146,6 @@ public class Satellite
 
         }
 
-        /**
-* Calculates the X and Y positions and velocities after the specified number of seconds has elapsed
-* @param t the time in seconds between data updates
-*/
-        public void secondsElapsed(int t)
-        {
-
-                //Gets the X axis acceleration and stores it in the variable ax
-                double ax = this.getAX();
-
-                //Gets the Y axis acceleration and stores it in the variable ay
-                double ay = this.getAY();
-
-                //Sets the new X position after t seconds
-                x = x + (vx * t);
-
-                //Sets the new Y position after t seconds
-                y = y + (vy * t);
-
-                //Sets the new X velocity after t seconds
-                vx = vx + (ax * t);
-
-                //Sets the new Y velocity after t seconds
-                vy = vy + (ay * t);
-
-                //Checks to see if the satellite has crashed and, if so, sets the x and y velocities to zero
-                if ( this.hasCrashed() )
-                {
-
-                        vx = 0;
-                        vy = 0;
-
-                }
-        }
 
         /**
 * Calculates the x-axis acceleration
